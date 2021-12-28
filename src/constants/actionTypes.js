@@ -1,0 +1,4 @@
+export const actionTypes = { 
+    GET_RESTAURANTS_LIST : "GET_RESTAURANTS_LIST" ,
+    SET_RESTAURANTS_LIST : "SET_RESTAURANTS_LIST"
+};

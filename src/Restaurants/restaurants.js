@@ -1,11 +1,19 @@
 import './../App.css';
+import {Link} from 'react-router-dom'
+import { useDispatch } from 'react-redux';
+import { setRestaurantDetails } from '../actions/restaurant_Action';
 
 export default function Restaurants({list}){
+    const dispatch = useDispatch();
+
+    function setRestaurant(){
+        dispatch(setRestaurantDetails(list));
+    }
 
     return(
         <>
             <div className="restaurants">
-                <a href='foo'>
+                <Link to = '/restaurantDetails' onClick={setRestaurant}>
                     <div className="restaurants-image-container">
                         <div>
                             <img className="restaurants-image" alt="restaurant" src={list.Image} loading="lazy" />
@@ -35,7 +43,7 @@ export default function Restaurants({list}){
                             </div>
                         </div>
                     </div>
-                </a>
+                </Link>
             </div>
         </>
     )
