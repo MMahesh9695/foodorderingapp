@@ -1,4 +1,26 @@
 .restaurant-container{
     display: flex;
     flex-direction: column;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+
+.details-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.details-name-contanier{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.details-review{
+    padding: 0.5rem;
+    border: 1px solid green;
+    border-radius: 0.5rem;
+    color: white;
+    background-color: green;
 }

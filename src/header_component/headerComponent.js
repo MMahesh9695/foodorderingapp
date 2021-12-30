@@ -14,7 +14,9 @@ export default function Header(){
                 <input type="text" id="txtSearch" name="search" placeholder="Enter Search Value" />
                 <button id="btn_search">Search</button>
             </div>
-            <Cart />
+            <div>
+                <Cart />
+            </div>
         </div>
     )
 }

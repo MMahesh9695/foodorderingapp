@@ -1,15 +1,22 @@
 import {detailContext} from './../Restaurants/restaurantDetails'
-import { useContext } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import FoodItem from './Food'
+import { foodStore } from '../Data_Store/FoodStore';
 
 export default function FoodList(){
     const list = useContext(detailContext);
-    const foodItemList = list.food;
+    const restaurantId =list.id;
+    const [foodItemList,setFoodItemList] = useState({food:[]});
+    
+    useEffect(()=>{
+        setFoodItemList(foodStore.find( item=> item.id === restaurantId ));
+    
+    },[foodItemList,restaurantId])
     
     return (
         <>
             {
-                foodItemList.map( item => <FoodItem key={item} value={item} />)
+                foodItemList ? foodItemList.food.map( item => <FoodItem key={item} value={item} />) : ""
             }
         </>
     )

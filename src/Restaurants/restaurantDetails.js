@@ -8,14 +8,20 @@ export const detailContext = React.createContext();
 
 export default function RestaurantDetails(){
     const list = useSelector ((state)=> state.resDetails.list);
+    const foodListStyle ={
+        paddingTop :"1rem",
+        margin: "auto",
+        width: "50%"
+    }
 
     return(
         <detailContext.Provider value={list}>
             <div className="restaurant-container">
-                <div>
+                <div style={{marginBottom: "2rem"}}>
                     <Restaurant/>
                 </div>
-                <div>
+                <hr/>
+                <div style={foodListStyle}>
                     <FoodList/>
                 </div>
             </div>
