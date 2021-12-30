@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 import { useDispatch } from 'react-redux';
 import { setRestaurantDetails } from '../actions/restaurant_Action';
 
-export default function Restaurants({list}){
+export default function RestaurantCard({list}){
     const dispatch = useDispatch();
 
     function setRestaurant(){

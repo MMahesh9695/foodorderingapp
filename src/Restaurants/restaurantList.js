@@ -1,5 +1,5 @@
 import './../App.css';
-import Restaurants from './restaurants'
+import RestaurantCard from './restaurantCard'
 import { useEffect, useState } from 'react';
 import {store} from './../Data_Store/store';
 
@@ -12,7 +12,7 @@ export default function RestaurantList() {
 
   return (
     <div id="restaurants" className="restaurants-container">
-      { restaurant.map( restaurant=> <Restaurants list={restaurant}/>)}
+      { restaurant.map( restaurant=> <RestaurantCard key={restaurant.id} list={restaurant}/>)}
     </div>
   );
 }
