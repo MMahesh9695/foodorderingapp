@@ -1,6 +1,13 @@
+import { useDispatch } from 'react-redux'
 import './foodStyle.css'
+import {addToCart} from './../actions/cart_Actions'
 
 export default function FoodItem({value}){
+    const cartDispatch = useDispatch();
+
+    function addItemToCart(){
+        cartDispatch(addToCart(value))
+    }
     
     return (
         <div className="food-item-container">
@@ -21,7 +28,7 @@ export default function FoodItem({value}){
                 </div>
             </div>
             <div className="button-container">
-                <button className="button-add">Add</button>
+                <button className="button-add" onClick={addItemToCart}>Add</button>
             </div>
         </div>
     )

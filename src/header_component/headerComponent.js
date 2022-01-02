@@ -1,7 +1,21 @@
 import './header.css'
-import Cart from './../Cart/cart'
+import { useSelector } from 'react-redux';
+import { useEffect,useState } from 'react';
 
 export default function Header(){
+    const totalItems = useSelector( state => state.cartDetails.items);
+    const [count, setCount] = useState(0);
+
+    useEffect(()=>{
+        let total =0;
+        if(totalItems){
+            totalItems.forEach(item => {
+                total += item.qty;
+            });
+        }
+        setCount(total);
+    },[count,totalItems])
+
     return (
         <div className="search-container">
             <div className="search-items">
@@ -15,7 +29,11 @@ export default function Header(){
                 <button id="btn_search">Search</button>
             </div>
             <div>
-                <Cart />
+                <button>
+                    <p>Cart</p>
+                    <p>{count}</p>
+                    <i className="fa fa-shopping-cart"></i>
+                </button>
             </div>
         </div>
     )

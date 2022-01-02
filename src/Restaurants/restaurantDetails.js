@@ -8,6 +8,7 @@ export const detailContext = React.createContext();
 
 export default function RestaurantDetails(){
     const list = useSelector ((state)=> state.resDetails.list);
+
     const foodListStyle ={
         paddingTop :"1rem",
         margin: "auto",
